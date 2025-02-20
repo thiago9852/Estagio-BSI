@@ -28,17 +28,17 @@ Arquivos importantes:
 ## 2. Como iniciar e parar o Symfony e o Docker
 
 ### Iniciar o ambiente Docker e Symfony
-1. Subir os contêineres do projeto:
+1. Construir os contêineres (caso ainda não tenha sido feito ou haja modificações na configuração):
+   ```sh
+   docker-compose build
+   ```
+2. Subir os contêineres do projeto:
    ```sh
    docker-compose up -d
    ```
-2. Acessar o contêiner do PHP:
+3. Iniciar o Symfony (caso não esteja usando o container docker):
    ```sh
-   docker exec -it nome_do_container_php bash
-   ```
-3. Iniciar o servidor Symfony dentro do contêiner:
-   ```sh
-   symfony serve
+   symfony server:start
    ```
 
 ### Parar o ambiente
@@ -58,11 +58,11 @@ Arquivos importantes:
 ### Instalando pacotes com o Composer
 Para adicionar pacotes ao Symfony, use o comando:
 ```sh
-docker exec -it nome_do_container_php composer require nome_do_pacote
+composer require nome_do_pacote
 ```
 Exemplo:
 ```sh
-docker exec -it nome_do_container_php composer require symfony/maker-bundle --dev
+composer require symfony/maker-bundle --dev
 ```
 
 ---
@@ -74,13 +74,19 @@ Execute dentro do contêiner:
 ```sh
 php bin/console make:controller NomeDoController
 ```
-Isso criará um arquivo `NomeDoController.php` dentro da pasta `src/Controller/`.
+Isso criará um arquivo `NomeDoController.php` dentro da pasta `src/Controller/`. e também gera uma pasta de templates em `templates/nome_do_controller/` com um arquivo _index.html.twig_. 
 
 ### Criar uma Entity
 ```sh
 php bin/console make:entity NomeDaEntity
 ```
 Isso gerará um arquivo em `src/Entity/NomeDaEntity.php`, onde você pode definir os atributos da tabela.
+
+#### Execute o comando para editar a entidade existente:
+```sh
+php bin/console make:entity NomeDaEntity
+```
+Ele perguntará quais novos atributos deseja adicionar.
 
 ### Criar o CRUD
 ```sh
@@ -93,10 +99,13 @@ Isso gerará um controlador e as views para gerenciar os dados da entidade.
    ```sh
    php bin/console make:migration
    ```
-2. Executar a migração:
+2. Executar a migração (se estiver usando Docker, adicione `php` antes do comando):
    ```sh
-   php bin/console doctrine:migrations:migrate
+   php php bin/console doctrine:migrations:migrate
    ```
-
+3. Caso você queira atualizar automaticamente a estrutura do banco de dados sem gerar uma migração manualmente (o que não é recomendado para produção), pode usar:
+   ```sh
+   php bin/console doctrine:schema:update --force
+   ```
 Agora sua aplicação Symfony com Docker está pronta para ser utilizada! 🚀
 
