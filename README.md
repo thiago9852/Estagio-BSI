@@ -1,4 +1,4 @@
-# README - Guia de Uso do Symfony com Docker
+# Guia do Projeto
 
 ## Introdução
 Este documento fornece instruções sobre como configurar e utilizar o Symfony dentro de um ambiente Docker. Também aborda comandos essenciais para manipular pacotes com o Composer e gerenciar entidades, controladores e operações CRUD no Symfony.
