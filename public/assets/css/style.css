@@ -1,0 +1,101 @@
+
+/* NAVBAR */
+
+.body {
+    background: #fbfbfb;
+}
+
+.bg-navbar {
+    background: #79a6de;
+}
+
+.nav-logo img {
+    width: 75px;
+    height: 75px;
+}
+
+.menu-nav {
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.nav-container {
+    justify-content: end;
+}
+
+.nav-item {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #e1ff39;
+}
+
+/* Estilos gerais do rodapé */
+.rodape {
+    background: #79a6de;
+    color: white;
+    padding-top: 20px;
+}
+
+.conteiner {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pn-linha {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.pn-coluna {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+}
+
+.pn-coluna-pequena {
+    flex: 0.3;
+    text-align: right;
+}
+
+.rodape-titulo {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.rodape-link {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .pn-linha {
+        flex-direction: column;
+        text-align: center;
+    }
+    .pn-coluna-pequena {
+        text-align: center;
+    }
+}
+
+.sub-rodape {
+    background: #4e77a9;
+    padding: 5px 0;
+}
+
+.sub-rodape p {
+    margin-bottom: 0;
+    margin-left: 10px;
+}
