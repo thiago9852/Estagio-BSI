@@ -1,18 +1,64 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <style>
-        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-    </style>
 
-    <div class="example-wrapper">
-        <h1>Hello {{ controller_name }}! ✅</h1>
-
-        This friendly message is coming from:
-        <ul>
-            <li>Your controller at <code>C:/Users/thiag/OneDrive/Documentos/GitHub/Estagio-BSI/src/Controller/IndexController.php</code></li>
-            <li>Your template at <code>C:/Users/thiag/OneDrive/Documentos/GitHub/Estagio-BSI/templates/index/index.html.twig</code></li>
-        </ul>
+    <div class="pd-banner-home">
+        <div class="imagem-home">
+            <img src="{{asset('assets/imagem/DSCN8969.jpg')}}" alt="#">
+        </div>
     </div>
+
+    <section class="doacao">
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="pd-doe">
+                        <div class="pd-base-titulo">
+                            <span class="pd-base-icone"><i class="fa-solid fa-hand-holding-dollar"></i></span>
+                            <span class="pd-base-secao pd-lato">Doe Agora</span>
+                        </div>
+                        <div class="pd-doe-valor">
+                            <span class="doe-valor"><a href="#" class="doe-link">R$ 100</a></span>
+                            <span class="doe-valor"><a href="#" class="doe-link">R$ 50</a></span>
+                            <span class="doe-valor"><a href="#" class="doe-link">R$ 20</a></span>
+                            <span class="doe-valor"><a href="#" class="doe-link">Outro valor</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="pd-video">
+        <div class="col-lg-12">
+            <div class="video-informativo">
+                <video width="100%" height="500px" controls>
+                    <source src="{{ asset('assets/imagem/videoplayback.mp4') }}" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <section class="patrocinadores">
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="pd-base-titulo">
+                    <span class="pd-base-icone"><i class="fa-solid fa-thumbs-up"></i></span>
+                    <span class="pd-base-secao pd-lato">Patrocinadores</span>
+                </div>
+
+                <div class="row">
+                    <div class="pd-lista-patrocinador">
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
